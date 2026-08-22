@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 /**
  * Full-viewport animated circuit-trace background.
@@ -7,6 +8,7 @@ import { useEffect, useRef } from "react";
  */
 export default function CircuitBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -73,11 +75,15 @@ export default function CircuitBackground() {
           points.push({ x, y });
         }
 
+        const isLight = document.documentElement.getAttribute("data-theme") === "light";
+        // Use darker tuned colors for light theme so traces remain visible but subtle
+        const cyan = isLight ? "8,145,178" : "34,211,238";
+        const gold = isLight ? "158,125,10" : "212,175,55";
         traces.push({
           points,
           progress: Math.random(),
           speed: 0.0015 + Math.random() * 0.002,
-          color: Math.random() > 0.65 ? "34,211,238" : "212,175,55", // cyan or gold
+          color: Math.random() > 0.65 ? cyan : gold,
           width: Math.random() > 0.85 ? 1.4 : 0.8,
         });
       }
@@ -114,13 +120,14 @@ export default function CircuitBackground() {
     function draw() {
       if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
+      const isLightDraw = document.documentElement.getAttribute("data-theme") === "light";
 
       for (const trace of traces) {
         // faint static trace line
         ctx.beginPath();
         ctx.moveTo(trace.points[0].x, trace.points[0].y);
         for (const p of trace.points.slice(1)) ctx.lineTo(p.x, p.y);
-        ctx.strokeStyle = `rgba(${trace.color},0.08)`;
+        ctx.strokeStyle = `rgba(${trace.color},${isLightDraw ? 0.13 : 0.08})`;
         ctx.lineWidth = trace.width;
         ctx.stroke();
 
@@ -128,7 +135,7 @@ export default function CircuitBackground() {
         for (const p of trace.points) {
           ctx.beginPath();
           ctx.arc(p.x, p.y, 1.4, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${trace.color},0.15)`;
+          ctx.fillStyle = `rgba(${trace.color},${isLightDraw ? 0.22 : 0.15})`;
           ctx.fill();
         }
 
@@ -176,7 +183,7 @@ export default function CircuitBackground() {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas

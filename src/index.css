@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Circuit Noir palette */
+  /* Circuit Noir palette — dark (default) */
   --color-void: #05070d;
   --color-panel: #0a0e17;
   --color-panel-light: #10151f;
@@ -17,6 +17,21 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Light theme — soft, high-contrast while keeping gold/cyan accents */
+html[data-theme="light"] {
+  --color-void: #f8fafc;
+  --color-panel: #ffffff;
+  --color-panel-light: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-gold: #9e7d0a;
+  --color-gold-bright: #b8960d;
+  --color-cyan: #0891b2;
+  --color-cyan-dim: #0e7490;
+  --color-ink: #0f172a;
+  --color-muted: #475569;
+  --color-muted-dim: #94a3b8;
 }
 
 * {
@@ -45,6 +60,13 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+html[data-theme="light"] canvas[aria-hidden="true"] {
+  opacity: 0.32 !important;
 }
 
 ::selection {
@@ -75,7 +97,7 @@ button:focus-visible {
 }
 
 .text-gradient-gold {
-  background: linear-gradient(90deg, #d4af37, #f4d03f);
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-bright));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -104,6 +126,9 @@ button:focus-visible {
 /* Project card gradient glow on hover */
 .project-card-glow {
   background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, transparent 40%, rgba(34,211,238,0.06) 100%);
+}
+html[data-theme="light"] .project-card-glow {
+  background: linear-gradient(135deg, rgba(158,125,10,0.07) 0%, transparent 40%, rgba(8,145,178,0.07) 100%);
 }
 
 /* Project modal scrollbar */

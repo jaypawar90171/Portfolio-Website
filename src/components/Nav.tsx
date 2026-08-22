@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 const LINKS = [
   { href: "#about", label: "About" },
@@ -47,15 +48,18 @@ export default function Nav() {
           ))}
         </ul>
 
-        <button
-          onClick={() => setOpen((o) => !o)}
-          data-cursor-hover
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          className="md:hidden text-ink font-mono text-lg"
-        >
-          {open ? "×" : "☰"}
-        </button>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen((o) => !o)}
+            data-cursor-hover
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            className="md:hidden text-ink font-mono text-lg w-9 h-9 inline-flex items-center justify-center"
+          >
+            {open ? "×" : "☰"}
+          </button>
+        </div>
       </div>
 
       {open && (

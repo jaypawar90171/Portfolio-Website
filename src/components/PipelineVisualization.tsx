@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "../context/ThemeContext";
 
 type PipelineStep = {
   id: string;
@@ -13,6 +14,11 @@ export default function PipelineVisualization({
   steps: PipelineStep[];
 }) {
   const [active, setActive] = useState(0);
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+  const gold = isLight ? "#9e7d0a" : "#d4af37";
+  const panel = isLight ? "#ffffff" : "#0a0e17";
+  const border = isLight ? "#e2e8f0" : "#1b2233";
 
   return (
     <div className="border border-border rounded-lg bg-panel/70 backdrop-blur-sm p-5 md:p-8">
@@ -49,13 +55,13 @@ export default function PipelineVisualization({
             <motion.span
               animate={{
                 scale: active === i ? 1.25 : 1,
-                backgroundColor: i <= active ? "#d4af37" : "#0a0e17",
-                borderColor: i <= active ? "#d4af37" : "#1b2233",
+                backgroundColor: i <= active ? gold : panel,
+                borderColor: i <= active ? gold : border,
               }}
               transition={{ duration: 0.3 }}
               className="w-4 h-4 rounded-full border-2"
               style={{
-                boxShadow: active === i ? "0 0 12px 3px rgba(212,175,55,0.6)" : "none",
+                boxShadow: active === i ? `0 0 12px 3px ${isLight ? "rgba(158,125,10,0.45)" : "rgba(212,175,55,0.6)"}` : "none",
               }}
             />
             <span

@@ -12,6 +12,18 @@
     />
     <title>Jay Deepak Pawar — Full-Stack Developer & Agentic AI Engineer</title>
     <meta name="description" content="Portfolio of Jay Deepak Pawar — full-stack MERN developer and Agentic AI engineer." />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme = stored === "light" || stored === "dark" ? stored : "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
