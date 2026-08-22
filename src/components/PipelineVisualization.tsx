@@ -26,7 +26,7 @@ export default function PipelineVisualization({
       </div>
 
       {/* Node row */}
-      <div className="relative flex items-center justify-between mb-8 overflow-x-auto pb-2">
+      <div className="relative flex items-center justify-between mb-8 overflow-x-auto pt-3 pb-2">
         <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-border" />
         {/* progress line */}
         <motion.div

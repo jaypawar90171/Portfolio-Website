@@ -100,3 +100,38 @@ button:focus-visible {
 @keyframes blink {
   50% { opacity: 0; }
 }
+
+/* Project card gradient glow on hover */
+.project-card-glow {
+  background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, transparent 40%, rgba(34,211,238,0.06) 100%);
+}
+
+/* Project modal scrollbar */
+.project-modal::-webkit-scrollbar {
+  width: 6px;
+}
+.project-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+.project-modal::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+.project-modal::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+

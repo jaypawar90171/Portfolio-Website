@@ -25,14 +25,14 @@ export const education = [
     location: "Kolhapur",
     degree: "B.Tech in Computer Science and Engineering",
     detail: "CGPA: 8.9",
-    period: "Sep 2023 – July 2026",
+    period: "Sep 2023 - July 2026",
   },
   {
     school: "Government Polytechnic Kolhapur",
     location: "Kolhapur",
     degree: "Diploma in Information Technology",
     detail: "Percentage: 93.18%",
-    period: "Dec 2020 – Aug 2023",
+    period: "Dec 2020 - Aug 2023",
   },
 ];
 
@@ -41,7 +41,7 @@ export const experience = [
     role: "Associate Technical Consultant",
     org: "Streebo Inc",
     location: "Ahmedabad, Gujarat",
-    period: "Jan 2026 – August 2026",
+    period: "Jan 2026 - August 2026",
     points: [
       "Contributing to the backend development of AI Operator — an agentic browser automation system that executes real-world tasks (e-commerce, bookings, form submissions) on behalf of users via conversational AI interfaces.",
       "Implementing new features for the AI Operator's sandboxed execution engine, enabling secure, isolated task execution triggered by chatbot interactions.",
@@ -51,7 +51,7 @@ export const experience = [
     role: "Software Development Intern",
     org: "Mechsoft Digital Technologies Pvt. Ltd.",
     location: "Pune, Maharashtra",
-    period: "Jul 2025 – Dec 2025",
+    period: "Jul 2025 - Dec 2025",
     points: [
       "Contributed to a Library Management System with item listing, rental queues, and user notifications.",
       "Built both a mobile application for users and an admin panel using React to manage rentals and monitor platform activity.",
@@ -66,6 +66,9 @@ export const projects = [
     period: "Jan 2026 – July 2026",
     tags: ["LangGraph", "LangChain", "FastAPI", "React", "RAG", "Groq LLaMA"],
     featured: true,
+    icon: "🧠",
+    github: "https://github.com/jay/skillforge-ai",
+    liveDemo: "https://skillforge-ai.vercel.app",
     summary:
       "A full-stack AI-powered career platform that scrapes live job postings and generates personalized, week-by-week learning roadmaps via a LangGraph multi-agent RAG pipeline.",
     points: [
@@ -115,9 +118,12 @@ export const projects = [
   {
     id: "devsync",
     name: "DevSync",
-    period: "Jan 2025 – July 2025",
+    period: "Jan 2025 - July 2025",
     tags: ["MERN", "Generative AI", "Redis", "WebSockets", "WebContainers"],
     featured: false,
+    icon: "⚡",
+    github: "https://github.com/jaypawar90171/DevSync",
+    liveDemo: "https://github.com/jaypawar90171/DevSync",
     summary:
       "A full-stack collaboration platform for developers to create projects, add collaborators, and communicate in real time — with AI-driven in-chat code generation.",
     points: [
@@ -129,9 +135,12 @@ export const projects = [
   {
     id: "voting-dapp",
     name: "Blockchain Based Voting System",
-    period: "Sept 2024 – May 2024",
+    period: "Sept 2024 - May 2024",
     tags: ["Ethereum", "Hardhat", "Web3.js", "React", "MetaMask"],
     featured: false,
+    icon: "🔗",
+    github: "https://github.com/jaypawar90171/Blockchain-based-E-Voting",
+    liveDemo: "https://blockchain-based-e-voting.vercel.app/",
     summary:
       "A decentralized voting application on Ethereum with a React frontend, ensuring transparent, tamper-proof elections.",
     points: [
@@ -177,7 +186,7 @@ export const achievements = [
 export const certificates = [
   {
     title: "Cloud Computing (NPTEL)",
-    detail: "12-week course, Jan–Apr 2025, Score: 75/100",
+    detail: "12-week course, Jan-Apr 2025, Score: 75/100",
   },
   {
     title: "AI/ML Virtual Internship (Google)",

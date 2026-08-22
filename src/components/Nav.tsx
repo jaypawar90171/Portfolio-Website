@@ -30,7 +30,7 @@ export default function Nav() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#home" data-cursor-hover className="font-mono text-gold text-sm tracking-wider">
-          JDP<span className="text-cyan">.</span>dev
+          Jay<span className="text-cyan">.</span>dev
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
