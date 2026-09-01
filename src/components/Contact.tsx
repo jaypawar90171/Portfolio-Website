@@ -43,6 +43,12 @@ export default function Contact() {
                 {profile.links.linkedin.replace("https://", "")}
               </a>
             </p>
+             <p className="text-muted text-sm">
+              <span className="text-cyan">leetcode:</span>{" "}
+              <a href={profile.links.leetcode} target="_blank" rel="noreferrer" data-cursor-hover className="hover:text-gold transition-colors">
+                {profile.links.leetcode.replace("https://", "")}
+              </a>
+            </p>
           </div>
         </Reveal>
 
