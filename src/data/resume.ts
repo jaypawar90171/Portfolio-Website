@@ -13,9 +13,9 @@ export const profile = {
   phone: "8830083175",
   email: "jayp90171@gmail.com",
   links: {
-    linkedin: "https://linkedin.com/in/jay",
-    github: "https://github.com/jay",
-    leetcode: "https://leetcode.com/jay",
+    linkedin: "https://www.linkedin.com/in/jay-pawar-2717b1297/",
+    github: "https://github.com/jaypawar90171",
+    leetcode: "https://leetcode.com/u/jayp90171/",
   },
 };
 
